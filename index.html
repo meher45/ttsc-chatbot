@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TTSC Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 TTSC Chatbot</h1>
+
+    <!-- Question Box -->
+    <form method="POST" class="question-box">
+      <input type="text" name="message" placeholder="Ask your question here..." required>
+      <button type="submit">Ask</button>
+    </form>
+
+    <!-- Answer Box -->
+    <div class="answer-box">
+      {% if reply %}
+        <p>{{ reply }}</p>
+      {% else %}
+        <p>Answer will appear here...</p>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
+
